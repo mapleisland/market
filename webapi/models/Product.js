@@ -11,14 +11,17 @@ const Product = sequelize.define('product', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
   },
   category_id: {
     type: DataTypes.INTEGER,
     allowNull: false
   },
   price: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  unit: {
+    type: DataTypes.STRING,
     allowNull: false
   },
   suppliers: {

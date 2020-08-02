@@ -1,5 +1,5 @@
 {
-  "additionalProperties": false,
+  "additionalProperties": true,
   "minProperties": 1,
   "errorMessage": {
     "minProperties": "没有什么修改"

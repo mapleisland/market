@@ -8,14 +8,6 @@ async function main(data) {
   if(validateRes.err) {
     return err(400, validateRes.msg);
   }
-  const options = {
-    limit: 1,
-    where: {
-      name: data.name
-    }
-  }
-  let count = await Product.count(options);
-  if(count) return err(400, "该名称已经存在");
   let res = await Product.create(data);
   return res
 }

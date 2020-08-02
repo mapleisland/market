@@ -8,7 +8,7 @@ const fetch = require(`node-fetch`);
     let data = {
       name: `product` + new Date().getTime(),
       category_id: 15,
-      price: 1,
+      price: "1",
       suppliers: "",
       purchase_channels: "",
     }
@@ -41,7 +41,7 @@ const fetch = require(`node-fetch`);
     let data = {
       name: `修改product` + new Date().getTime(),
       display_order: 11,
-      price: 123,
+      price: "123",
       show: false,
       suppliers: "222",
       purchase_channels: "333",
