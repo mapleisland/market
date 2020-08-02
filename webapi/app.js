@@ -9,17 +9,17 @@ app.register(fastifyCors)
 // const admin = require('./routes/admin')
 // app.register(admin, { prefix: '/api/admin' })
 
+const category = require('./routes/category')
+app.register(category, { prefix: '/api/category' })
+
+const supplier = require('./routes/supplier')
+app.register(supplier, { prefix: '/api/supplier' })
+
+const purchase_channel = require('./routes/purchase_channel')
+app.register(purchase_channel, { prefix: '/api/purchase_channel' })
+
 const product = require('./routes/product')
 app.register(product, { prefix: '/api/product' })
-
-// const category = require('./routes/category')
-// app.register(category, { prefix: '/api/category' })
-
-// const supplier = require('./routes/supplier')
-// app.register(supplier, { prefix: '/api/supplier' })
-
-// const product_supply = require('./routes/product_supply')
-// app.register(product_supply, { prefix: '/api/product_supply' })
 
 app.listen(3000, "0.0.0.0", () => {
   console.log("server started!");

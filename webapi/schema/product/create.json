@@ -1,0 +1,55 @@
+{
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "category_id",
+    "price",
+    "suppliers",
+    "purchase_channels"
+  ],
+  "errorMessage": {
+    "required": {
+      "name": "必须填写名称",
+      "category_id": "必须填写category_id字段",
+      "price": "必须填写price字段",
+      "suppliers": "必须填写suppliers字段",
+      "purchase_channels": "必须填写purchase_channels字段"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "名称不能为空"
+    },
+    "category_id": {
+      "type": "integer",
+      "errorMessage": "category_id格式不正确"
+    },
+    "price": {
+      "type": "number",
+      "minLength": 1,
+      "errorMessage": "price格式不正确"
+    },
+    "suppliers": {
+      "type": "string",
+      "errorMessage": "suppliers格式不正确"
+    },
+    "purchase_channels": {
+      "type": "string",
+      "errorMessage": "purchase_channels格式不正确"
+    },
+    "qcpass": {
+      "type": "boolean",
+      "errorMessage": "qcpass格式不正确"
+    },
+    "display_order": {
+      "type": "integer",
+      "errorMessage": "显示顺序必须为整数"
+    },
+    "show": {
+      "type": "boolean",
+      "errorMessage": "show格式不正确"
+    }
+  }
+}

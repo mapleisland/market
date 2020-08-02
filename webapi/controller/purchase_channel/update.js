@@ -1,7 +1,7 @@
-const { Product } = require("../../models");
+const { PurchaseChannel } = require("../../models");
 const Validator = require("../../libs/Validator");
 const err = require("../../libs/err");
-const schema = require("../../schema/product/update.json");
+const schema = require("../../schema/purchase_channel/update.json");
 
 async function main(id, data) {
   const validateRes = Validator.validateData(schema, data);
@@ -12,7 +12,7 @@ async function main(id, data) {
     limit: 1,
     where: { id },
   }
-  let res = await Product.update(data, options);
+  let res = await PurchaseChannel.update(data, options);
   return Boolean(res[0])
 }
 

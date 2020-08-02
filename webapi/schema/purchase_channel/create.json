@@ -1,0 +1,18 @@
+{
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "errorMessage": {
+    "required": {
+      "name": "必须填写名称"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "名称不能为空"
+    }
+  }
+}

@@ -1,15 +1,11 @@
 const { DataTypes } = require('sequelize');
 let sequelize = require("./db");
 
-const Admin = sequelize.define('Admin', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    allowNull: false
-  },
+const Admin = sequelize.define('admin', {
   username: {
     type: DataTypes.STRING,
-    allowNull: false
+    primaryKey: true,
+    allowNull: false,
   },
   password: {
     type: DataTypes.STRING,
@@ -20,5 +16,7 @@ const Admin = sequelize.define('Admin', {
   timestamps: false,
   tableName: 'admin'
 });
+
+
 
 module.exports = Admin

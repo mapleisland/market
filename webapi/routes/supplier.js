@@ -1,15 +1,14 @@
-const getController = require("../controller/product/get");
-const getByIdController = require("../controller/product/get_by_id");
-const createController = require("../controller/product/create");
-const updateController = require("../controller/product/update");
-const deleteController = require("../controller/product/delete");
+const getController = require("../controller/supplier/get");
+const getByIdController = require("../controller/supplier/get_by_id");
+const createController = require("../controller/supplier/create");
+const updateController = require("../controller/supplier/update");
+const deleteController = require("../controller/supplier/delete");
 
 function router(fastify, opts, done) {
 
   fastify.get('/', async (request, reply) => {
-    let query = request.query
     try {
-      return await getController(query);
+      return await getController();
     }
     catch (e) {
       console.error(e);

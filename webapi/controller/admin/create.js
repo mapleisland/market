@@ -1,7 +1,7 @@
-const { Product } = require("../../models");
+const { Admin } = require("../../models");
 const Validator = require("../../libs/Validator");
 const err = require("../../libs/err");
-const schema = require("../../schema/product/create.json");
+const schema = require("../../schema/admin/create.json");
 
 async function main(data) {
   const validateRes = Validator.validateData(schema, data);
@@ -11,12 +11,12 @@ async function main(data) {
   const options = {
     limit: 1,
     where: {
-      name: data.name
+      username: data.username
     }
   }
-  let count = await Product.count(options);
+  let count = await Admin.count(options);
   if(count) return err(400, "该名称已经存在");
-  let res = await Product.create(data);
+  let res = await Admin.create(data);
   return res
 }
 

@@ -1,0 +1,32 @@
+{
+  "additionalProperties": false,
+  "required": [
+    "username",
+    "password",
+    "newpassword",
+  ],
+  "errorMessage": {
+    "required": {
+      "username": "必须填写用户名",
+      "password": "必须填写旧密码",
+      "newpassword": "必须填写新密码"
+    }
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "名称不能为空"
+    },
+    "password": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "旧密码不能为空"
+    },
+    "newpassword": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "新密码不能为空"
+    }
+  }
+}

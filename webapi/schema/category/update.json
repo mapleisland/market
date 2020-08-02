@@ -1,0 +1,18 @@
+{
+  "additionalProperties": false,
+  "minProperties": 1,
+  "errorMessage": {
+    "minProperties": "没有什么修改"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "名称不能为空"
+    },
+    "display_order": {
+      "type": "integer",
+      "errorMessage": "显示顺序必须为整数"
+    }
+  }
+}

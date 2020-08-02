@@ -4,13 +4,9 @@ const fetch = require(`node-fetch`);
 
   let inst
   {
-    let base = `http://127.0.0.1:3000/api/product`
+    let base = `http://127.0.0.1:3000/api/supplier`
     let data = {
-      name: `product` + new Date().getTime(),
-      category_id: 15,
-      price: 1,
-      suppliers: "",
-      purchase_channels: "",
+      name: `supplier` + new Date().getTime(),
     }
     let res = await fetch(`${base}`, {
       method: 'POST',
@@ -22,29 +18,16 @@ const fetch = require(`node-fetch`);
   }
 
   {
-    let base = `http://127.0.0.1:3000/api/product/${inst.id}`
+    let base = `http://127.0.0.1:3000/api/supplier/${inst.id}`
     let res = await fetch(`${base}`);
     let data = await res.json()
     console.log(data);
   }
 
   {
-    let base = `http://127.0.0.1:3000/api/product/?category_id=${inst.category_id}`
-    let res = await fetch(`${base}`);
-    let data = await res.json()
-    console.log(data);
-    console.log(data.rows[0].Category);
-  }
-
-  {
-    let base = `http://127.0.0.1:3000/api/product/${inst.id}`
+    let base = `http://127.0.0.1:3000/api/supplier/${inst.id}`
     let data = {
-      name: `修改product` + new Date().getTime(),
-      display_order: 11,
-      price: 123,
-      show: false,
-      suppliers: "222",
-      purchase_channels: "333",
+      name: `修改supplier` + new Date().getTime(),
     }
     let res = await fetch(`${base}`, {
       method: 'PUT',
@@ -56,14 +39,14 @@ const fetch = require(`node-fetch`);
   }
 
   {
-    let base = `http://127.0.0.1:3000/api/product/${inst.id}`
+    let base = `http://127.0.0.1:3000/api/supplier/${inst.id}`
     let res = await fetch(`${base}`);
     let data = await res.json()
     console.log(data);
   }
 
   {
-    let base = `http://127.0.0.1:3000/api/product/${inst.id}`
+    let base = `http://127.0.0.1:3000/api/supplier/${inst.id}`
 
     let res = await fetch(`${base}`, {
       method: 'DELETE',
@@ -73,7 +56,7 @@ const fetch = require(`node-fetch`);
   }
 
   {
-    let base = `http://127.0.0.1:3000/api/product/${inst.id}`
+    let base = `http://127.0.0.1:3000/api/supplier/${inst.id}`
     let res = await fetch(`${base}`);
     let data = await res.json()
     console.log(data);

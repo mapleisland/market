@@ -1,7 +1,22 @@
-const Product = require("../../models/Product");
+const { Product, Category } = require("../../models");
+const Validator = require("../../libs/Validator");
+const err = require("../../libs/err");
+const schema = require("../../schema/product/get.json");
 
-async function main() {
-  let res = await Product.findAndCountAll();
+async function main(data) {
+  if(data.category_id) { data.category_id = Number(data.category_id) }
+  if(data.show) { data.show = data.show === "true" ? true : false }
+  const validateRes = Validator.validateData(schema, data);
+  if(validateRes.err) {
+    return err(400, validateRes.msg);
+  }
+  let options = {
+    where: data,
+    include: {
+      model: Category,
+    }
+  }
+  let res = await Product.findAndCountAll(options);
   return res
 }
 

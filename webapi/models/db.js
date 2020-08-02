@@ -1,3 +1,4 @@
+const path = require("path")
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize({
   host: 'localhost',
@@ -8,8 +9,7 @@ const sequelize = new Sequelize({
     acquire: 30000,
     idle: 10000
   },
-  storage: './database/database.sqlite',
-  operatorsAliases: false
+  storage: path.resolve(__dirname, '../database/database.sqlite')
 });
 
 module.exports = sequelize

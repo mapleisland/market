@@ -1,0 +1,13 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "category_id": {
+      "type": "integer",
+      "errorMessage": "category_id格式不正确"
+    },
+    "show": {
+      "type": "boolean",
+      "errorMessage": "show格式不正确"
+    }
+  }
+}

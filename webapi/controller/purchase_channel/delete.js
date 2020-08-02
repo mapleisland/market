@@ -1,11 +1,11 @@
-const { Product } = require("../../models");
+const { PurchaseChannel } = require("../../models");
 
 async function main(id) {
   let options = {
     limit: 1,
     where: { id },
   }
-  let res = await Product.destroy(options);
+  let res = await PurchaseChannel.destroy(options);
   return Boolean(res)
 }
 

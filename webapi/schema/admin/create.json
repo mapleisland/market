@@ -1,0 +1,25 @@
+{
+  "additionalProperties": false,
+  "required": [
+    "username",
+    "password"
+  ],
+  "errorMessage": {
+    "required": {
+      "username": "必须填写用户名",
+      "password": "必须填写密码"
+    }
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "名称不能为空"
+    },
+    "password": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "密码不能为空"
+    }
+  }
+}

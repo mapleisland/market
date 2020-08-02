@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 let sequelize = require("./db");
 
-const Category = sequelize.define('category', {
+const PurchaseChannel = sequelize.define('purchase_channel', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,16 +12,11 @@ const Category = sequelize.define('category', {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-  },
-  display_order: {
-    type: DataTypes.INTEGER,
-    defaultValue: 1,
-    allowNull: false
   }
 }, {
   sequelize,
   timestamps: false,
-  tableName: 'category'
+  tableName: 'purchase_channel'
 });
 
-module.exports = Category
+module.exports = PurchaseChannel

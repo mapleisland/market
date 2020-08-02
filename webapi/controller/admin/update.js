@@ -1,9 +1,9 @@
-const { Product } = require("../../models");
+const { Admin } = require("../../models");
 const Validator = require("../../libs/Validator");
 const err = require("../../libs/err");
-const schema = require("../../schema/product/update.json");
+const schema = require("../../schema/category/update.json");
 
-async function main(id, data) {
+async function main(data) {
   const validateRes = Validator.validateData(schema, data);
   if(validateRes.err) {
     return err(400, validateRes.msg);
@@ -12,8 +12,8 @@ async function main(id, data) {
     limit: 1,
     where: { id },
   }
-  let res = await Product.update(data, options);
-  return Boolean(res[0])
+  let res = await Admin.update(data, options);
+  return res
 }
 
 module.exports = main
