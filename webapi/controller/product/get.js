@@ -12,6 +12,7 @@ async function main(data) {
   }
   let options = {
     where: data,
+    order: [["display_order", "asc"]],
     include: {
       model: Category,
     }

@@ -38,6 +38,10 @@
       "type": "integer",
       "errorMessage": "显示顺序必须为整数"
     },
+    "note": {
+      "type": "string",
+      "errorMessage": "请输入描述"
+    },
     "show": {
       "type": "boolean",
       "errorMessage": "是否显示格式不正确"
