@@ -10,7 +10,6 @@ app.register(require('fastify-static'), {
   prefix: '/', // optional: default '/'
 })
 
-
 // const home = require('./routes/home')
 // app.register(home, { prefix: '/api' })
 
@@ -30,6 +29,7 @@ const product = require('./routes/product')
 app.register(product, { prefix: '/api/product' })
 
 const myHost = getIPAdress();
+
 app.listen(8888, "0.0.0.0", () => {
   console.log(`
   服务器启动成功, 请打开浏览器!
