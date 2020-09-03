@@ -1,13 +1,13 @@
-const createController = require("../controller/admin/create");
-const getController = require("../controller/admin/get");
-const updateController = require("../controller/admin/update");
+const createHandler = require("../handler/admin/create");
+const getHandler = require("../handler/admin/get");
+const updateHandler = require("../handler/admin/update");
 
 function router(fastify, opts, done) {
 
   fastify.post('/', async (request, reply) => {
     const data = request.body
     try {
-      return await createController(data);
+      return await createHandler(data);
     }
     catch (e) {
       console.error(e);
@@ -18,7 +18,7 @@ function router(fastify, opts, done) {
   fastify.post('/login', async (request, reply) => {
     const data = request.body
     try {
-      return await getController(data);
+      return await getHandler(data);
     }
     catch (e) {
       console.error(e);
@@ -29,7 +29,7 @@ function router(fastify, opts, done) {
   fastify.put('/change_password', async (request, reply) => {
     const data = request.body
     try {
-      return await updateController(data);
+      return await updateHandler(data);
     }
     catch (e) {
       console.error(e);

@@ -1,0 +1,51 @@
+{
+  "additionalProperties": true,
+  "errorMessage": {
+    "required": {
+    }
+  },
+  "properties": {
+    "merchant_name": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "商户名称不能为空"
+    },
+    "operator_name": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": "经营者姓名不能为空"
+    },
+    "position": {
+      "type": "string",
+      "errorMessage": "摊位名不能为空"
+    },
+    "industry": {
+      "type": "string",
+      "errorMessage": "所属行业不能为空"
+    },
+    "score": {
+      "type": "string",
+      "errorMessage": "得分不能为空"
+    },
+    "complaint": {
+      "type": "integer",
+      "errorMessage": "投诉次数为数字类型"
+    },
+    "avatar_url": {
+      "type": "string",
+      "errorMessage": "头像图片地址为字符串"
+    },
+    "license_url": {
+      "type": "string",
+      "errorMessage": "营业执照图片地址为字符串"
+    },
+    "wxpay_qr_url": {
+      "type": "string",
+      "errorMessage": "微信收款二维码图片地址为字符串"
+    },
+    "alipay_qr_url": {
+      "type": "string",
+      "errorMessage": "支付宝收款二维码图片地址为字符串"
+    }
+  }
+}

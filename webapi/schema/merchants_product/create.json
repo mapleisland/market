@@ -1,0 +1,25 @@
+{
+  "additionalProperties": true,
+  "errorMessage": {
+    "required": {
+    }
+  },
+  "properties": {
+    "merchant_id": {
+      "type": "integer",
+      "errorMessage": "商户id不能为空"
+    },
+    "product_id": {
+      "type": "integer",
+      "errorMessage": "商品id不能为空"
+    },
+    "price": {
+      "type": "string",
+      "errorMessage": "请输入正确价格"
+    },
+    "qcpass": {
+      "type": "boolean",
+      "errorMessage": "请输入合格或不合格"
+    }
+  }
+}

@@ -1,8 +1,8 @@
-const getHandler = require("../handler/category/get");
-const getByIdHandler = require("../handler/category/get_by_id");
-const createHandler = require("../handler/category/create");
-const updateHandler = require("../handler/category/update");
-const deleteHandler = require("../handler/category/delete");
+const getHandler = require("../handler/merchant/get");
+const getByIdHandler = require("../handler/merchant/get_by_id");
+const createHandler = require("../handler/merchant/create");
+const updateHandler = require("../handler/merchant/update");
+const deleteHandler = require("../handler/merchant/delete");
 
 function router(fastify, opts, done) {
 
@@ -41,7 +41,6 @@ function router(fastify, opts, done) {
   fastify.put('/:id(^\\d+$)', async (request, reply) => {
     const id = Number(request.params.id)
     const data = request.body
-    console.log(data, typeof data);
     try {
       return await updateHandler(id, data);
     }

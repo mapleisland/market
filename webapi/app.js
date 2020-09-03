@@ -28,16 +28,22 @@ app.register(purchase_channel, { prefix: '/api/purchase_channel' })
 const product = require('./routes/product')
 app.register(product, { prefix: '/api/product' })
 
+const merchant = require('./routes/merchant')
+app.register(merchant, { prefix: '/api/merchant' })
+
+const merchants_product = require('./routes/merchants_product')
+app.register(merchants_product, { prefix: '/api/merchants_product' })
+
 const myHost = getIPAdress();
 
 app.listen(8888, "0.0.0.0", () => {
-  console.log(`
-  服务器启动成功, 请打开浏览器!
-  浏览今日菜价请访问 ${myHost}:8888/#/
-  播放循环动画请访问 ${myHost}:8888/#/show
-  进入后台管理界面请访问 ${myHost}:8888/#/admin
+  let info = `
+  // 服务器启动成功, 请打开浏览器!
+  // 浏览今日菜价请访问 ${myHost}:8888/#/
+  // 播放循环动画请访问 ${myHost}:8888/#/show
+  // 进入后台管理界面请访问 ${myHost}:8888/#/admin
   `
-  );
+  console.log(8888);
 })
 
 function getIPAdress() {
